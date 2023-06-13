@@ -1,42 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Registro de Usuario</title>
-  <script>
-    function validarFormulario() {
-      // Obtener los valores ingresados por el usuario
-      var nombre = document.getElementById('nombre').value;
-      var email = document.getElementById('email').value;
-      var contraseña = document.getElementById('contraseña').value;
-      
-      // Validar que los campos no estén vacíos
-      if (nombre === '' || email === '' || contraseña === '') {
-        alert('Por favor, complete todos los campos');
-        return false;
-      }
-      
-      // Validar el formato del correo electrónico
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Por favor, ingrese un correo electrónico válido');
-        return false;
-      }
-      
-      // Validar la longitud de la contraseña
-      if (contraseña.length < 6) {
-        alert('La contraseña debe tener al menos 6 caracteres');
-        return false;
-      }
-      
-      // Si todo es válido, enviar el formulario
-      alert('Registro exitoso');
-      return true;
-    }
-  </script>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <title>Plataforma de Streaming</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Iniciar Sesión</title>
+  </head>
+
+  <header>
+    <h1>Plataforma de Streaming</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Películas</a></li>
+      <li><a href="series.html">Series</a></li>
+      <li><a href="iniciods.html">Perfil</a></li>
+    </ul>
+  </nav>
+</header>
+
 <body>
+  <div id="containerCuenta">
   <h1>Registro de Usuario</h1>
-  <form onsubmit="return validarFormulario()">
+  <form class="formulario" onsubmit="return validarFormulario()">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" required><br><br>
     
@@ -46,7 +31,45 @@
     <label for="contraseña">Contraseña:</label>
     <input type="password" id="contraseña" required><br><br>
     
-    <input type="submit" value="Registrarse">
+    <input class="boton" type="submit" value="Registrarse">
   </form>
+  <p id="cuenta">¿Ya tienes una cuenta? <a href="iniciods.html" class="hyperlink">Inicia sesión aquí</a></p>
+</div>
 </body>
+
+<footer>
+</footer>
+
+<script>
+  function validarFormulario() {
+    // Obtener los valores ingresados por el usuario
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var contraseña = document.getElementById('contraseña').value;
+    
+    // Validar que los campos no estén vacíos
+    if (nombre === '' || email === '' || contraseña === '') {
+      alert('Por favor, complete todos los campos');
+      return false;
+    }
+    
+    // Validar el formato del correo electrónico
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('Por favor, ingrese un correo electrónico válido');
+      return false;
+    }
+    
+    // Validar la longitud de la contraseña
+    if (contraseña.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres');
+      return false;
+    }
+    
+    // Si todo es válido, enviar el formulario
+    alert('Registro exitoso');
+    return true;
+  }
+</script>
+
 </html>
